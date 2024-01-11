@@ -2,9 +2,11 @@ import { NavBarProps } from "../types/types";
 
 const NavBar = ({ items }: NavBarProps) => {
   return (
-    <div className="bg-red-400">
+    <div className="bg-gray-800 flex flex-row gap-5 py-4 pl-5">
       {items.map((item) => (
-        <p>{item}</p>
+        <div>
+          <p className="text-white cursor-pointer">{item}</p>
+        </div>
       ))}
     </div>
   );
