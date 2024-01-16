@@ -1,19 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Character } from "../services/axios";
-
-const getColor = (status: string) => {
-  if (status === "Alive") {
-    return "bg-green-500";
-  }
-
-  if (status === "Dead") {
-    return "bg-red-600";
-  }
-
-  if (status === "unknown") {
-    return "bg-gray-500";
-  }
-};
+import { getColor } from "../utils/getColor";
 
 const CharacterCard = (character: Character) => {
   const navigate = useNavigate();
@@ -43,7 +30,7 @@ const CharacterCard = (character: Character) => {
         </div>
 
         <div>
-          <p className="text-gray-400">Las known location:</p>
+          <p className="text-gray-400">Last known location:</p>
           <p className="inline cursor-pointer hover:text-green-300">
             {character.location.name}
           </p>
